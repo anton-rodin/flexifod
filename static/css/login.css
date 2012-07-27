@@ -1,0 +1,23 @@
+.logo-header {
+	color: #868686;
+	text-align: center;
+	font: 570%/1.5 sans-serif;
+	text-shadow: 2px 2px 2px white;
+}.main-description {
+	font-size: 25px;
+	color: #868686;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.page-header {
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: #D6E3E8;
+}
+.login-block {
+	color: #868686;
+	text-align: center;
+}
+.login-block p {
+	margin: 20px 0 7px 0;
+}

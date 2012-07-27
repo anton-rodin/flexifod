@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block header %}{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="page-header">
+        <h1 class='logo-header'>Flexirob</h1>
+	    <div class="main-description">
+	  	  Сохраняй закладки в интернете быстро и удобно
+	    </div>
+    </div>
+    <div class="login-block">
+        {% if not google_user %}
+        <p>
+            Для того что бы начать пользоваться сервисом, необходимо войти в Google Account
+        </p>
+        <a class="f-button" href="{{login_url}}">Войти в Google Account</a>
+        {% elif not user %}
+        <p>
+            Введите, пожалуйста, Ваше имя, что бы зарегистрироваться в системе
+        </p>
+        <form method="POST"  class="form-horizontal">
+            <span>Имя: </span>
+            <input type="text" name="name"/>
+            <input type="submit" class="f-button" value="Зарегистрироваться"/>
+        </form>
+        {% else %}
+        <p>
+            Всё отлично! Думаю, теперь самое время начать пользоваться сервисом!
+        </p>
+        <a href="/" class="f-button">Начать пользоваться сервисом</a>
+        {% endif %}
+    </div>
+    <!--<svg style="overflow: hidden; position: relative; " height="20" version="1.1" width="20" xmlns="http://www.w3.org/2000/svg">
+        <path style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); " fill="hsb(0.2777777777777778, .75, .8)" stroke="#ffffff" d="M10,10L10,0A10,10,0,0,1,8.263518223330697,19.84807753012208Z"></path>
+    </svg-->
+  </div>
+{% endblock %}
+{% block styles %}
+        <link href="/static/css/base.css" rel="stylesheet">
+        <link href="/static/css/login.css" rel="stylesheet">
+{% endblock %}
+{% block libs %}    
+        <script src="/static/js/jquery.js"></script>
+        <script type="text/javascript"> $('#block .module').addClass('display'); </script>
+{% endblock %}

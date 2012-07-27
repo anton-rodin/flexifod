@@ -1,0 +1,46 @@
+{% extends "base.html" %} 
+{% block header %}{% endblock %} 
+{% block title%}{{title}}{% endblock %}
+{% block content %}
+<div>
+	<a href="http://flexirod.appspot.com/" id="flexirob-logo" rel="nofollow"><img alt="Flexirob" height="46" width="181" src="/static/img/logo.png"></a>
+	<div class="share42init"></div>
+</div>
+<div class="link public">
+    <div class="head">
+        <h4 class="title">
+            {{title}}
+        </h4>
+        <ul class="info-list">
+            <li>
+                <label>
+                    Ссылка
+                </label>
+                <div class="value url">
+                    <a target="_blank" title="Открыть в новом окне" href="{{url}}">{{url}}</a>
+                </div>
+            </li>
+            <li>
+                <label>
+                    Описание
+                </label>
+                <div class="value content">
+                    {{description}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %} {% block styles %}
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/public.css" rel="stylesheet">
+{% endblock %} {% block libs %}
+<script src="/static/js/jquery.js">
+</script>
+<script src="/static/js/share42.js">
+</script>
+<script type="text/javascript">
+ $('#block .module').addClass('display');
+ share42('http://flexirod.appspot.com/static/js/');
+</script>
+{% endblock %}

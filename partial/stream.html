@@ -1,0 +1,47 @@
+<div id="putHere">
+</div>
+<script type="text/tmpl" id="stream-linkList">
+  <% for ( var i = 0; i < items.length; i++ ) { %>
+    <li class="link" data-id="<%=items[i].prop.id%>">
+    	<div class="head">
+	    	<span class="title"><%=items[i].prop.title%></span>
+	    	<span class="url"><%=items[i].prop.url%></span>
+    	</div>
+    	<div class="extended">
+    		<div>
+    			<span class="title"><%=items[i].prop.title%></span>
+    			<span class="url"><a target="_blank" title="Открыть в новом окне" href="<%=items[i].prop.url%>"><%=items[i].prop.url%></a></span>
+                <span class="edit-button-icon"></span>
+    			<a href="/public/<%=items[i].prop.hurl%>"><span class="share-button-icon"></span></a>
+    		</div>
+    		<div class="description">
+    			<div>
+    				Описание	
+    			</div>
+    			<div>
+    				<%=items[i].prop.description%>	
+    			</div>
+    		</div>
+    	</div>
+    	<div class="edit-field">
+    		<form class="form-horisontal">
+				<ul>
+					<li>
+						<label>Название</label>
+						<input type="text" name="title" value="<%=items[i].prop.title%>"/>
+					</li>
+					<li>
+						<label for="">Ссылка</label>
+						<input type="text" name="url" value="<%=items[i].prop.url%>"/>
+					</li>
+					<li>
+						<label for="">Описание</label>
+						<textarea name="description"  cols="30" rows="4"><%=items[i].prop.description%></textarea>
+					</li>
+				</ul>
+				<div class="f-button save-button">Сохранить изменения</div>
+    		</form>
+    	</div>
+    </li>
+  <% } %>
+</script>
